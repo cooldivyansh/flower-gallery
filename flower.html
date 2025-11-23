@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Flower Description</title>
+    <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+    <button onclick="window.location.href='index.html'">Back to Gallery</button>
+    <h1 id="flowerName"></h1>
+    <img id="flowerImage" src="" alt="" />
+    <p id="flowerDescription"></p>
+
+    <script>
+        const flower = JSON.parse(localStorage.getItem('selectedFlower'));
+        if (flower) {
+            document.getElementById('flowerName').textContent = flower.name;
+            document.getElementById('flowerImage').src = flower.image;
+            document.getElementById('flowerImage').alt = flower.name;
+            document.getElementById('flowerDescription').textContent = flower.description;
+        } else {
+            document.body.innerHTML = '<p>No flower data found. Please go back to the gallery.</p>';
+        }
+    </script>
+</body>
+
+</html>

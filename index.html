@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Flower Gallery</title>
+    <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+    <h1>Flower Gallery</h1>
+    <div class="flower-grid" id="flowerGrid"></div>
+
+    <script>
+        const flowers = [{
+            name: 'Rose',
+            image: 'rose.jpg',
+            description: 'Roses are among the most cherished flowering plants, with hundreds of species and thousands of cultivated varieties developed worldwide. These perennial shrubs can grow as compact bushes, climbing vines, or large hedges with stems often covered in prickles (thorns). Rose flowers vary greatly in size, shape, and petal count—from tiny miniatures to blooms over seven inches across. The colors range from creamy whites and soft pinks to vibrant reds, yellows, peaches, and oranges. Roses are especially known for their sweet and evocative fragrance, which has inspired perfumes and rituals throughout history. In addition to their ornamental value, roses produce berry-like fruits called hips that are packed with Vitamin C. The flower’s cultural significance is immense, symbolizing love, beauty, and passion in art, literature, and traditions worldwide.'
+        }, {
+            name: 'Sunflower',
+            image: 'sunflower.jpg',
+            description: 'Sunflowers (Helianthus annuus) are iconic plants recognized for their giant, radiant yellow flower heads and their remarkable ability to follow the sun—a phenomenon known as heliotropism. The sunflower stem is tall and sturdy, often growing over three meters in height, topped by a massive flower head composed of hundreds to thousands of tiny florets arranged in a spiral pattern. The bright yellow ray florets encircle a dark center of disc florets, which mature into seeds—a valuable food source for birds and humans. Sunflowers bloom in summer and symbolize positivity, intelligence, and loyalty. Their seeds are used for oil, snacks, and bird feed, and the plants themselves are admired in gardens and agricultural fields for their cheerful appearance and ecological benefits.'
+        }, {
+            name: 'Tulip',
+            image: 'tulip.jpg',
+            description: 'Tulips (genus Tulipa) are classic spring-blooming perennials distinguished by their cup-shaped or star-shaped flowers and bold, upright form. Each flower typically consists of six brightly colored tepals (petals and sepals look nearly identical), available in almost every hue except true blue. Tulips range from diminutive rock-garden miniatures to tall varieties exceeding two feet in height, with broad leaves clustered base. Tulip blooms last only a couple of weeks, but they provide a dazzling display of color and elegance during their season. Their easy cultivation and endless colors have made them favorites in gardens and floral arrangements, while the flower itself is a symbol of perfect love and beauty.​'
+
+
+        }, {
+            name: 'Lotus',
+            image: 'lotus.jpg',
+            description: 'The lotus flower (Nelumbo nucifera), known for its ethereal beauty and spiritual symbolism, flourishes in shallow, muddy waters of ponds and lakes. This perennial aquatic plant features large, circular leaves that float or stand above the water surface on long, air-filled stalks. The blossoms, which can reach up to 10 inches across, have numerous boat-shaped petals in shades of white, pink, or rose and close at night. The flower’s radiant yellow center is surrounded by stamens and is supported by a thick, fleshy stalk. The lotus completes its life cycle by leaving behind a distinctive seedpod, which disperses seeds for future growth. Revered in Hinduism and Buddhism, the lotus symbolizes purity, resilience, and enlightenment, beautifully rising above muddy surroundings to open magnificently in daylight.'
+        }, {
+            name: 'Daisy',
+            image: 'daisy.jpg',
+            description: 'The daisy is a beloved perennial flowering plant known for its iconic white petals surrounding a bright yellow center. Belonging to the aster family (Asteraceae), daisies include species like the oxeye daisy, Shasta daisy, and the English daisy. The flower head is composed of both ray flowers (the "petals" people see) and tiny disk flowers forming the central button. Daisies flourish in meadows and gardens across the world and are famous for their cheerful, sun-like appearance. They typically grow close to the ground but can reach up to 2-3 feet tall, with flower heads ranging from 1 to 4 inches wide. The daisy plant thrives from late spring to early autumn, displaying endurance and vibrancy. Beyond ornamental beauty, daisies also have medicinal and ecological uses, symbolizing innocence and purity across cultures.'
+        }, {
+            name: 'Marigold',
+            image: 'marigold.jpg',
+            description: 'Marigolds (genus Tagetes) are vibrant annual or perennial herbs with eye-catching flowers in shades of yellow, orange, red, and occasionally white. The blooms are comprised of layers of ruffled petals surrounding a central disc, growing singly or clustered on sturdy stems. Marigolds range from 1 to 5 feet in height, with pinnate, fern-like green leaves and a robust root system. They are admired not only for their decorative appeal—for gardens, festivals, and rituals—but also for their practical uses: marigolds act as natural pest deterrents and possess antibacterial as well as antiviral properties. The flowers have a sharp, musky aroma and are even edible, offering a distinct peppery and citrusy flavor. Marigolds flourish best in sunny, hydrated conditions and are widely celebrated as symbols of positivity, warmth, and protection.'
+        }, {
+            name: 'Jasmine',
+            image: 'jasmine.jpg',
+            description: 'Jasmine encompasses over 200 species of climbing shrubs and vines belonging to the olive family (Oleaceae). The small, star-shaped flowers are typically white or yellow and have an intense, intoxicating fragrance that is highly prized for perfumes, teas, and cultural rituals. Jasmine plants are either deciduous or evergreen and can have simple or compound leaves. Its flowers usually have 4 to 9 petals and grow in clusters, blooming in temperate and tropical climates. The scent of jasmine flowers, which often bloom at night, is symbolic of purity, grace, and deep romantic love. In many cultures, jasmine is used in wedding ceremonies, religious rituals, and home decor, both for its beauty and its aromatic qualities. Jasmine is easy to grow in warm, sunny environments and is popular in gardens, on trellises, and as a source of essential oils.'
+        }, {
+            name: 'Orchid',
+            image: 'orchid.jpg',
+            description: 'Orchids form one of the largest and most diverse plant families, with over 26,000 species found in nearly every habitat around the globe. Orchid flowers are renowned for their striking beauty, elegance, and unique shape—including bilateral symmetry and a specialized "lip" petal called the labellum that acts as a landing pad for pollinators. Petal colors range from pristine white and delicate pinks to intense purples, blues, yellows, and even green, often displaying elaborate patterns, frills, or ruffles. Some orchids are fragrant, emitting scents of vanilla or honey, while others have no distinct aroma. Orchid plants often produce smooth, leathery leaves, and some rely on symbiotic fungi for successful seed germination. Orchids represent luxury, beauty, exoticism, and love, and are popular both as ornamental houseplants and in horticultural displays.'
+        }, {
+            name: 'Lily',
+            image: 'lily.jpg',
+            description: 'Lily flowers (genus Lilium) are celebrated for their large, striking blossoms and enchanting fragrance. These elegant perennials grow from underground bulbs and reach heights ranging from 2 to 6 feet, bearing leafy stems and narrow, linear leaves. The flowers typically have six petal-like segments known as tepals, which may be trumpet-shaped, bowl-shaped, or reflexed backward, creating forms such as the Turk’s cap lily. Lilies bloom in late spring or summer and exhibit a wide spectrum of colors including white, yellow, orange, pink, red, and purple, often adorned with patterns like spots, stripes, or frilled edges. Some lilies produce solitary flowers, while others present clustered racemes at the tip of the stem. The fragrance can range from subtle to overpowering, and the flowers are a symbol of purity, renewal, and beauty across many cultures.'
+        }, {
+            name: 'Hibiscus',
+            image: 'hibiscus.jpg',
+            description: 'Hibiscus is a genus of flowering plants renowned for their large, showy trumpet-shaped blooms, ranging in color from vivid reds and pinks to oranges, yellows, purples, and even whites. The flowers are borne singly or in clusters and can reach up to 25 cm wide, with five or more petals that may be scalloped or smooth. The leaves of the hibiscus are alternate, often with a toothed or lobed margin, and arranged spirally around the stalk. Hibiscus blooms are notable for their distinctive stamen, which is typically fused into a single tube, and their flashy pistil structures. While individual hibiscus flowers last only a single day in many species, the plant produces new blooms continuously through the warm months. Hibiscus is not only admired for its ornamental beauty in gardens but also valued in traditional medicines, religious rituals, and as a tea ingredient. The plant symbolizes delicate beauty and is celebrated across tropical and subtropical regions.'
+        }];
+
+        const flowerGrid = document.getElementById('flowerGrid');
+
+        flowers.forEach(flower => {
+            const card = document.createElement('div');
+            card.className = 'flower-card';
+            card.innerHTML = `
+    <img src="${flower.image}" alt="${flower.name}" />
+    <h3>${flower.name}</h3>
+  `;
+            card.addEventListener('click', () => {
+                localStorage.setItem('selectedFlower', JSON.stringify(flower));
+                window.location.href = 'flower.html';
+            });
+            flowerGrid.appendChild(card);
+        });
+    </script>
+</body>
+
+</html>
